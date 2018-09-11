@@ -1,5 +1,5 @@
 <template>
-    <div class='all2'>我是Bottom</div>
+    <div class='all2'>上传成功了！！oh yeah</div>
 </template>
 <script>
 export default {
