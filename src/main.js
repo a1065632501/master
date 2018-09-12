@@ -20,10 +20,5 @@ new Vue({
   components: { Top },
   template: '<Top/>'
 })
-new Vue({
-  el:'#Bottom',
-  router,
-  components: { Bottom },
-  template: '<Bottom/>'
-})
+
 

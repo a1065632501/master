@@ -1,7 +1,7 @@
 <template>
   <div id="app">
-    <div id="Top"></div>
-    <div id="Bottom"></div>
+      <div id="Top"></div>
+      <router-view></router-view>
   </div>
 </template>
 
@@ -19,5 +19,6 @@ export default {
 #app {
   width:100%;
   height:2000px;
+  position: relative;
 }
 </style>

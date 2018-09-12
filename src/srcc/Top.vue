@@ -2,12 +2,12 @@
     <div id='all1'>
         <div class='logo'></div>
         <div class='chose'>
-            <a href="https://music.163.com/#" class="a">发现音乐</a>
-            <a href="https://music.163.com/#/my/" class="b">我的音乐</a>
-            <a href="https://music.163.com/#/friend" class="c">朋友</a>
-            <a href="https://music.163.com/store/product" class="d">商城</a>
-            <a href="https://music.163.com/store/product" class="e">音乐人</a>
-            <a href="https://music.163.com/#/download" class="f">下载客户端</a>
+            <router-link :to='{path:"/fmusic"}' class="a">发现音乐</router-link>
+            <router-link :to='{path:"/mymusic"}' class="b">我的音乐</router-link>
+            <router-link :to='{path:"/friend"}' class="c">朋友</router-link>
+            <router-link :to='{path:"/shop"}' class="d">商城</router-link>
+            <router-link :to='{path:"/people"}' class="e">音乐人</router-link>
+            <router-link :to='{path:"/down"}' class="f">下载客户端</router-link>
         </div>
         <div class='input'>
             <input type="text" value="音乐/视频/电台/用户"
@@ -67,7 +67,8 @@ export default {
         width:100%;
         height:68px;
         background:#242424;
-
+        border-bottom:1px solid #000;
+        position: relative;
     }
     .text {
         height:68px;
@@ -158,6 +159,7 @@ export default {
         width: 60px;
         margin-top:19px;
         margin-left:15px;
+        position: relative;
     }
     #all1 .on a{
         display:block;
@@ -196,9 +198,10 @@ export default {
         margin-left: -61px;
         margin-top: 15px;
         border-radius: 5px;
-        position: relative;
         background-color: #2B2B2B;
-        
+        position: absolute;
+        z-index: 999;
+        top: 24px;
     }
     #all1 .on .lists {
         height: 200px;
@@ -210,6 +213,9 @@ export default {
         position: relative;
         background-color: #2B2B2B;
         display: none;
+        position: absolute;
+        top: 24px;
+        z-index: 999;
 
     }
     #all1 .on .list .san{
@@ -329,5 +335,9 @@ export default {
         width: 110px;
         height: 68px;
         background: #242424;
+    }
+    #all1 .chose .router-link-active{
+        background-color:rgb(0, 0, 0); 
+        opacity: 1;
     }
 </style>
