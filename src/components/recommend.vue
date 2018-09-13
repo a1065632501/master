@@ -19,7 +19,66 @@
                     <div class="rex">PC&nbsp安卓&nbspiPhone&nbspWP&nbspiPad&nbspMac&nbsp六大客户端</div>
                 </div>
             </div>
+            <div class="releft">
+                <div class="hot">
+                    <div class="s">
+                        <div class="s1"></div>
+                        <div class="s2">热门推荐</div>
+                        <div class="s3">
+                            <a href="#" class="s31">华语</a>
+                            <a href="#" class="s32">流行</a>
+                            <a href="#" class="s33">摇滚</a>
+                            <a href="#" class="s34">民谣</a>
+                            <a href="#" class="s35">电子</a>
+                        </div>
+                        <div class="s4">
+                            <div class="s42"></div>
+                            <div class="s41">更多</div>
+                            
+                        </div>
+                    </div>
+                    <div class="z">
+                        <div class="z1">
+                            <div class="z11"></div>
+                            <a href="#" class="z12">英语课上那些英文歌曲青春印象</a>
+                        </div>
+                        <div class="z2">
+                                <div class="z21"></div>
+                                <a href="#" class="z22">我们不畏惧眼泪但要值得</a>
+                        </div>
+                        <div class="z3">
+                                <div class="z31"></div>
+                                <a href="#" class="z32">欧美金曲的另类大师演绎</a>
+                        </div>
+                        <div class="z4">
+                                <div class="z41"></div>
+                                <a href="#" class="z42">潇洒办事处今日营业中</a>
+                        </div>
+                        <div class="z5">
+                                <div class="z51"></div>
+                                <a href="#" class="z52">学院派走流行|高等学府走出来的音乐人</a>
+                        </div>
+                        <div class="z6">
+                                <div class="z61"></div>
+                                <a href="#" class="z62">我们在一个神奇的国度里</a>
+                        </div>
+                        <div class="z7">
+                                <div class="z71"></div>
+                                <a href="#" class="z72">明夜别枝惊鹊，清风半夜鸣蝉</a>
+                        </div>
+                        <div class="z8">
+                                <div class="z81"></div>
+                                <a href="#" class="z82">当妮走了，抖音冗</a>
+                        </div>
+                    </div>
+                    <div class="x"></div>
+                </div>
+                <div class="renew"></div>
+                <div class="bangdan"></div>
+            </div>
+            <div class="reright">
 
+            </div>   
         </div>
     </template>
     <script>
@@ -82,7 +141,7 @@
             height:334px;
             background:url(../assets/retop.png);
             position: absolute; 
-            right:184px;    
+            right:174px;    
             top:0px;
 
         }
@@ -109,21 +168,21 @@
             text-align: center;
             line-height: 30px;
             color:#8d8d8d;
-            margin-top:57px;
+            margin-top:2px;
         }
         .slideshow {
             width: 100%;
             height: 334px;
 
         }
-        li {
+        .reall .reshow .slideshow li {
             position: absolute;
             left:0px;
             width:100%;
             height:334px;
             right:435px;
 
-        }a {
+        }.reall .reshow .slideshow a {
             position: absolute;
             left:0px;
             width:100%;
@@ -131,7 +190,7 @@
             right:435px;
 
         }
-        img {
+        .reall .reshow .slideshow img {
             margin-left:188px;
             width: 724px;
             height: 334px;
@@ -205,6 +264,176 @@
         }
         .right-leave {
             transform: translateX(0);
+        }
+        .reall .releft{
+            width: 724px;
+            height:1330px;
+            margin-left:188px;
+            background: rgb(194, 236, 227);
+            float: left;
+        }
+        .reall .reright{
+            width:252px;
+            height:1330px;
+            float:left;
+            background: #403c3b;
+        }
+        .reall .releft .hot{
+           width:724px;
+           height:700px;
+           background:white;
+        }
+        .reall .releft .hot .s{
+            width:684px;
+            height:55px;
+            margin-left:20px;
+            border-bottom: 2px solid red;
+        }
+        .reall .releft .hot .s .s1{
+            width:30px ;
+            height:40px;
+            background: url(../assets/biaoji.png) no-repeat;
+            float: left;
+            margin-left:5px;
+            margin-top:26px;
+        }
+        .reall .releft .hot .s .s2{
+            width:95px;
+            height:40px; 
+            font-size:20px;
+            line-height: 40px;
+            margin-top:15px;
+            float: left;
+            color:rgb(71, 71, 71);
+        }
+        .reall .releft .hot .s .s3{
+            width:320px;
+            height:40px; 
+            font-size:13px;
+            line-height: 40px;
+            margin-top:26px;
+            float: left;
+            color:rgb(71, 71, 71);
+        }
+        .reall .releft .hot .s .s3 a{
+            text-decoration: none;
+            display: block;
+            float: left;
+            width:50px;
+            height:10px;
+            line-height:10px;
+            text-align: center;
+            margin-top:5px;
+            border-right: 1px solid #ddd;
+            color:rgb(131, 130, 130);
+        }
+        .reall .releft .hot .s .s3 a:hover{
+            text-decoration: underline;
+        }
+        .reall .releft .hot .s .s4{
+            width:60px;
+            height:40px; 
+            font-size:13px;
+            line-height: 40px;
+            margin-top:16px;
+            float: right;
+            color:rgb(131, 130, 130);
+        }
+        .reall .releft .hot .s .s41{    
+            margin-top:1px;
+        }
+        .reall .releft .hot .s .s42{    
+            width: 30px;
+            height:40px;
+            float:right;
+            margin-top:12px;
+            background: url(../assets/jiantou.png) no-repeat;
+        }
+        .reall .releft .hot .z{
+            width:724px;
+            height:855px;
+            margin-top:10px;
+        }
+        .reall .releft .hot .z div{
+            width: 141px;
+            height: 178px;
+            margin:10px 20px 40px 20px;
+            float: left;
+        }
+        .reall .releft .hot .z .z1 .z11{
+            width:141px;
+            height:138px;
+            float:none;
+            margin:0px;
+            background: url(../assets/z1.png);
+        }
+       
+        .reall .releft .hot .z a{
+            display: block;
+            width:141px;
+            height: 40px;
+            font-size: 14px;
+            line-height: 20px;
+            text-decoration: none;
+        }
+        .reall .releft .hot .z a:hover{
+            text-decoration: underline;
+        }
+        .reall .releft .hot .z .z2 .z21{
+            width:141px;
+            height:138px;
+            float:none;
+            margin:0px;
+            background: url(../assets/z2.png);
+        }
+       
+
+        .reall .releft .hot .z .z3 .z31{
+            width:141px;
+            height:138px;
+            float:none;
+            margin:0px;
+            background: url(../assets/z3.png);
+        }
+       
+
+        .reall .releft .hot .z .z4 .z41{
+            width:141px;
+            height:138px;
+            float:none;
+            margin:0px;
+            background: url(../assets/z4.png);
+        }
+       
+
+        .reall .releft .hot .z .z5 .z51{
+            width:141px;
+            height:138px;
+            float:none;
+            margin:0px;
+            background: url(../assets/z5.png);
+        }
+       
+
+        .reall .releft .hot .z .z6 .z61{
+            width:141px;
+            height:138px;
+            float:none;
+            margin:0px;
+            background: url(../assets/z6.png);
+        }
+        .reall .releft .hot .z .z7 .z71{
+            width:141px;
+            height:138px;
+            float:none;
+            margin:0px;
+            background: url(../assets/z7.png);
+        }.reall .releft .hot .z .z8 .z81{
+            width:141px;
+            height:138px;
+            float:none;
+            margin:0px;
+            background: url(../assets/z8.png);
         }
     </style>
     

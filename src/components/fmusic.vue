@@ -9,7 +9,7 @@
                 <router-link :to='{path:"/fmusic/news"}' class="a6">新碟上架</router-link>
             </div>
             <router-view></router-view>
-            <div class='shanzhai'>山寨网站，哈哈哈！！！！</div>
+            
         </div>  
     </template>
     <script>
