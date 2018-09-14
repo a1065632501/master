@@ -29,7 +29,7 @@
         .all2{
             min-width: 1300px;
             width:100%;
-            height:1700px;
+            height:2020px;
             background:pink;
         }
         .logo {
