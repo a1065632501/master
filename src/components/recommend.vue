@@ -82,10 +82,105 @@
                          <span class="right" v-on:click="change3()"></span>    
                     </div>
                 </div>
-                <div class="bangdan"></div>
+                <div class="bangdan">
+                    <div class="s">
+                        <div class="s1"></div>
+                        <div class="s2">榜单</div>
+                        <div class="s3">
+                            <a href="#" class="s31"></a>
+                            <a href="#" class="s32"></a>
+                            <a href="#" class="s33"></a>
+                            <a href="#" class="s34"></a>
+                            <a href="#" class="s35"></a>
+                        </div>
+                        <div class="s4">
+                            <div class="s42"></div>
+                            <a class="s41">更多</a>                       
+                        </div>
+                    </div>
+                    <div class="x">
+                        <div class="x1">
+                                <div class="x11">
+                                    <div class="x11left">
+                                        
+                                    </div>
+                                    <div class="x11right">
+                                        <a href="#">云音乐飙升榜</a>
+                                        <div class="a"></div>
+                                        <div class="b"></div>
+                                    </div>
+                                </div>
+                                <span v-for='item in rArray' :class="{hui:item.index%2===0}" v-on:mouseenter="item.a=true" v-on:mouseleave="item.a=false">
+                                    <div class="xa" :class="{xaa:item.index<3}">{{item.index1}}</div>
+                                    <a href="#" class="xb">{{item.content}}</a>
+                                    <div class="xc" v-show='item.a'>
+                                        <div class="x1"></div>
+                                        <div class="x2"></div>
+                                        <div class="x3"></div>
+                                    </div>
+                                </span>
+                                <div class="d">
+                                    <a href="#" class="d1">查看全部></a>
+                                </div>
+                        </div>
+                        <div class="x2">
+                            <div class="x11">
+                                <div class="x11left">
+                                    
+                                </div>
+                                <div class="x11right">
+                                    <a href="#">云音乐新歌榜</a>
+                                    <div class="a"></div>
+                                    <div class="b"></div>
+                                </div>
+                            </div>
+                            <span v-for='item in eArray' :class="{hui:item.index%2===0}" v-on:mouseenter="item.a=true" v-on:mouseleave="item.a=false">
+                                <div class="xa" :class="{xaa:item.index<3}">{{item.index1}}</div>
+                                <a href="#" class="xb">{{item.content}}</a>
+                                <div class="xc" v-show='item.a'>
+                                    <div class="x1"></div>
+                                    <div class="x2"></div>
+                                    <div class="x3"></div>
+                                </div>
+                            </span>
+                            <div class="d">
+                                <a href="#" class="d1">查看全部></a>
+                            </div>
+                        </div>
+                        <div class="x3">
+                            <div class="x11">
+                                <div class="x11left">
+                                    
+                                </div>
+                                <div class="x11right">
+                                    <a href="#">网易原创歌曲榜</a>
+                                    <div class="a"></div>
+                                    <div class="b"></div>
+                                </div>
+                            </div>
+                            <span v-for='item in fArray' :class="{hui:item.index%2===0}" v-on:mouseenter="item.a=true" v-on:mouseleave="item.a=false">
+                                <div class="xa" :class="{xaa:item.index<3}">{{item.index1}}</div>
+                                <a href="#" class="xb">{{item.content}}</a>
+                                <div class="xc" v-show='item.a'>
+                                    <div class="x1"></div>
+                                    <div class="x2"></div>
+                                    <div class="x3"></div>
+                                </div>
+                            </span>
+                            <div class="d">
+                                <a href="#" class="d1">查看全部></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="reright">
-
+                <div class="rs">
+                    <div class="rs1">登录网易云音乐，可以享受无限收藏的乐趣，并且无限同步到手机</div>
+                    <a href="#" class="rs2">用户登录</a>
+                </div>
+                <div class="rz"></div>
+                <div class="rx"></div>
             </div>   
         </div>
     </template>
@@ -106,6 +201,195 @@
                     mark:0,
                     mark1:0,
                     name1:'left1',
+                    fArray:[
+                        {
+                            index:0,
+                            index1:1,
+                            content:'霓虹',
+                            a:false
+                        },
+                        {
+                            index1:2,
+                            index:1,
+                            content:'给你煮面',
+                            a:false
+                        },
+                        {
+                            index1:3,
+                            index:2,
+                            content:'哑巴',
+                            a:false
+                        },
+                        {
+                            index1:4,
+                            index:3,
+                            content:'少年行',
+                            a:false
+                        },
+                        {
+                            index1:5,
+                            a:false,
+                            index:4,
+                            content:'通过考验'
+                        },
+                        {
+                            index1:6,
+                            a:false,
+                            index:5,
+                            content:'我说我当不了县长'
+                        },
+                        {
+                            index1:7,
+                            a:false,
+                            index:6,
+                            content:'幼稚的歌'
+                        },
+                        {
+                            index1:8,
+                            a:false,
+                            index:7,
+                            content:'觉华岛'
+                        },
+                        {
+                            index1:9,
+                            a:false,
+                            index:8,
+                            content:'小智'
+                        },
+                        {
+                            index1:10,
+                            a:false,
+                            index:9,
+                            content:'逆风的勇敢'
+                        }
+        
+                    ],
+                    eArray:[
+                        {
+                            index:0,
+                            index1:1,
+                            content:'可不可以',
+                            a:false
+                        },
+                        {
+                            index1:2,
+                            index:1,
+                            content:'乌云中(Live)',
+                            a:false
+                        },
+                        {
+                            index1:3,
+                            index:2,
+                            content:'一江水',
+                            a:false
+                        },
+                        {
+                            index1:4,
+                            index:3,
+                            content:'凌晨三点( demo )',
+                            a:false
+                        },
+                        {
+                            index1:5,
+                            a:false,
+                            index:4,
+                            content:'最美的遇见'
+                        },
+                        {
+                            index1:6,
+                            a:false,
+                            index:5,
+                            content:'再见Hip-Hop'
+                        },
+                        {
+                            index1:7,
+                            a:false,
+                            index:6,
+                            content:'童言无忌(Live)'
+                        },
+                        {
+                            index1:8,
+                            a:false,
+                            index:7,
+                            content:'从头'
+                        },
+                        {
+                            index1:9,
+                            a:false,
+                            index:8,
+                            content:'飞驰于你'
+                        },
+                        {
+                            index1:10,
+                            a:false,
+                            index:9,
+                            content:'Burn Out'
+                        }
+        
+                    ],
+                    rArray:[
+                        {
+                            index:0,
+                            index1:1,
+                            content:'burn out',
+                            a:false
+                        },
+                        {
+                            index1:2,
+                            index:1,
+                            content:'飞驰于我',
+                            a:false
+                        },
+                        {
+                            index1:3,
+                            index:2,
+                            content:'无我(WORK)[Live]',
+                            a:false
+                        },
+                        {
+                            index1:4,
+                            index:3,
+                            content:'一个人去巴黎',
+                            a:false
+                        },
+                        {
+                            index1:5,
+                            a:false,
+                            index:4,
+                            content:'Wake Up in the Sky'
+                        },
+                        {
+                            index1:6,
+                            a:false,
+                            index:5,
+                            content:'O.M.T'
+                        },
+                        {
+                            index1:7,
+                            a:false,
+                            index:6,
+                            content:'PUMA'
+                        },
+                        {
+                            index1:8,
+                            a:false,
+                            index:7,
+                            content:'想象'
+                        },
+                        {
+                            index1:9,
+                            a:false,
+                            index:8,
+                            content:'年少有为'
+                        },
+                        {
+                            index1:10,
+                            a:false,
+                            index:9,
+                            content:'BINBIAN病变'
+                        }
+        
+                    ],
                     dArray:[
                         {   index:0,
                             background:require('../assets/x1.png'),
@@ -221,6 +505,14 @@
                         this.name1="left1"
                         this.mark1+=5
                 },
+                show1(){
+                    item.b=true
+                     return this.show=item.b
+                },
+                show2(){
+                    let b=false
+                    return this.show=item.b
+                }
             },
             created () {
                 this.play()
@@ -244,7 +536,7 @@
             height:334px;
             background:url(../assets/retop.png);
             position: absolute; 
-            right:184px;    
+            left:912px;    
             top:0px;
 
         }
@@ -258,11 +550,11 @@
             width:214px;
             height:57px;
             margin-left:18px;
-            border-radius: 1px;
+            border-radius: 1px;background: #eee;
+            opacity:0.1;
 
         }.reall .reshow .retop .rez:hover{
-            background: #eee;
-            opacity:0.2;
+            background:none;
         }
         .reall .reshow .retop .rex{
             width:255px;
@@ -399,16 +691,18 @@
         }
         .reall .releft{
             width: 724px;
-            height:1500px;
+            height:1512px;
             margin-left:188px;
             background: #fff;
             float: left;
         }
         .reall .reright{
-            width:252px;
-            height:1500px;
+            width:251px;
+            height:1511px;
             float:left;
-            background: #403c3b;
+            background: white;
+            border:1px solid #ddd;
+            border-top: none;
         }
         .reall .releft .hot{
            width:724px;
@@ -488,7 +782,7 @@
         /* }1111 */
         .reall .releft .renew{
            width:724px;
-           height:300px;
+           height:290px;
            overflow: hidden;
    
         }
@@ -589,6 +883,7 @@
         .reall .releft .renew .x .x1 {
             width:685px;
             height:202px;
+            border:1px solid #ddd;
             margin-top:25px;
             margin-left: 0px;
             overflow: hidden;
@@ -651,6 +946,723 @@
             left:670px;
             background: url(../assets/right.png)no-repeat;
         }
+        .reall .releft .bangdan {
+            width:724px;
+           height:800px;
+        }
+        .reall .releft .bangdan .s{
+            width:684px;
+            height:55px;
+            margin-left:20px;
+            border-bottom: 2px solid red;
 
+        }
+        .reall .releft .bangdan .s .s1{
+            width:30px ;
+            height:40px;
+            background: url(../assets/biaoji.png) no-repeat;
+            float: left;
+            margin-left:5px;
+            margin-top:26px;
+        }
+        .reall .releft .bangdan .s .s2{
+            width:95px;
+            height:40px; 
+            font-size:20px;
+            line-height: 40px;
+            margin-top:15px;
+            float: left;
+            color:rgb(71, 71, 71);
+        }
+        .reall .releft .bangdan .s .s4{
+            width:60px;
+            height:40px; 
+            font-size:13px;
+            line-height: 40px;
+            margin-top:16px;
+            float: right;
+            color:rgb(131, 130, 130);
+        }
+        .reall .releft .bangdan .s .s4 a{
+            text-decoration: none;
+        }.reall .releft .bangdan .s .s4 a:hover{
+            text-decoration: underline;
+        }
+        .reall .releft .bangdan .s .s41{    
+            margin-top:1px;
+        }
+        .reall .releft .bangdan .s .s42{    
+            width: 30px;
+            height:40px;
+            float:right;
+            margin-top:12px;
+            background: url(../assets/jiantou.png) no-repeat;
+        }
+        .reall .releft .bangdan .x{
+            width:683px;
+            height:481px;
+            border:1px solid #ddd;
+            margin-top:20px;
+            margin-left:20px;
+            overflow: hidden;
+            background: #f5f5f5;
+            border-radius: 2px;
+
+        }
+        .reall .releft .bangdan .x .x1 {
+            height:482px;
+            width:227px;
+            float: left;
+            border-right:1px solid #ddd;
+        }
+        .reall .releft .bangdan .x .x1 .d{
+            height:31px;
+            width:227px;
+            float: left;
+            background: #e8e8e8;
+            border-radius: 2px;
+            font-size:12px;
+        }
+        .reall .releft .bangdan .x .x1 .d .d1{
+            display: block;
+            width: 120px;
+            height:20px;
+            margin-top:7px;
+            margin-left:145px;
+            text-decoration: none;
+            color:#000;
+        }
+        .reall .releft .bangdan .x .x1 .d .d1:hover{
+            text-decoration: underline;
+        }
+        .reall .releft .bangdan .x .x2 {
+
+            display: block;
+            height:482px;
+            width:227px;
+            float: left;
+            border-right:1px solid #ddd;
+        }
+        .reall .releft .bangdan .x .x1 span .xb:hover{
+            text-decoration: underline;
+        }
+      
+        .reall .releft .bangdan .x .x3 {
+         
+            display: block;
+            height:482px;
+            width:227px;
+            float: left;
+        }
+        .reall .releft .bangdan .x .x1 .x11 {
+            width: 227px;
+            height:130px;
+            background: #f4f4f4;
+        }
+        .reall .releft .bangdan .x .x1 .x11 .x11left{
+            width: 102px;
+            height:101px;
+            background: url(../assets/b1.png);
+            margin-left:9px;
+            margin-top:20px;
+            float: left;
+        }.reall .releft .bangdan .x .x1 .x11 .x11right{
+            width: 100px;
+            height:80px;
+            background: #f4f4f4;
+            float: left;
+            margin-top:25px;
+            position: relative;           
+   
+
+        }
+        .reall .releft .bangdan .x .x1 .x11 .x11right a{
+            text-decoration: none;
+            margin-left:1px;
+            font-size: 14px;
+            color: rgba(0, 0, 0, 0.801);
+            font-weight: bold;
+        }
+        .reall .releft .bangdan .x .x1 .x11 .x11right .a{
+           height: 23px;
+           width: 23px;
+           background: url(../assets/bofang.png);
+           position: absolute;
+           left:0px;
+           top:25px;
+        }
+        .reall .releft .bangdan .x .x1 .x11 .x11right .a:hover{
+            background: url(../assets/bofang1.png);
+}
+        .reall .releft .bangdan .x .x1 .x11 .x11right .b{
+            height: 23px;
+           width: 23px;
+           background: url(../assets/shoucang.png);
+           position: absolute;
+           left:30px;
+           top:26px;
+        }
+        .reall .releft .bangdan .x .x1 .x11 .x11right .b:hover{
+            background: url(../assets/shoucang1.png);
+}
+        .reall .releft .bangdan .x .x1 .x11 .x11right a:hover{
+            text-decoration: underline;
+        }
+        .reall .releft .bangdan .x .x1 span {
+            display: block;
+            width: 227px;
+            height:32px;
+            background: #f4f4f4;
+            position: relative;
+        }.reall .releft .bangdan .x .x1 .hui{
+            display: block;
+            width: 227px;
+            height:32px;
+            background: #e8e8e8;
+            position: relative;
+        }
+        .reall .releft .bangdan .x .x1 span .xa{
+                width: 35px;
+                height:32px;
+                float: left;
+                text-align: center;
+                margin-left: 10px;
+                line-height: 32px;
+                font-size: 13px;
+
+        }
+        .reall .releft .bangdan .x .x1 span .xaa{
+                width: 35px;
+                height:32px;
+                float: left;
+                text-align: center;
+                margin-left: 10px;
+                line-height: 32px;
+                font-size: 13px;
+                color:red;
+        }
+        .reall .releft .bangdan .x .x1 span .xb{
+                width: 150px;
+                height:32px;
+                float: left;
+                line-height: 32px;
+                font-size: 12px;
+                text-decoration: none;
+                color:#000;
+
+        }
+        .reall .releft .bangdan .x .x1 span .xc{
+                width: 105px;
+                height:32px;
+                position: absolute;
+                right:0px;
+
+        }
+        .reall .releft .bangdan .x .x1 span .xc .x1{
+                height: 19px;
+                width: 19px;
+                background:url(../assets/qbofang.png) no-repeat;
+                margin-top:6px;
+                float: left;
+                margin-left:28px;
+                border:none;
+        }
+        .reall .releft .bangdan .x .x1 span .xc .x1:hover{
+            background:url(../assets/qbofang1.png) no-repeat;
+        }.reall .releft .bangdan .x .x1 span .xc .x2:hover{
+            background:url(../assets/qjiahao1.png) no-repeat;
+        }.reall .releft .bangdan .x .x1 span .xc .x3:hover{
+            background:url(../assets/qshoucang1.png) no-repeat;
+        }.reall .releft .bangdan .x .x1 .hui .xc .x1:hover{
+            background:url(../assets/xbofang1.png) no-repeat;
+        }.reall .releft .bangdan .x .x1 .hui .xc .x2:hover{
+            background:url(../assets/xjiahao1.png) no-repeat;
+        }.reall .releft .bangdan .x .x1 .hui .xc .x3:hover{
+            background:url(../assets/xshoucang1.png) no-repeat;
+        }
+        .reall .releft .bangdan .x .x1 span .xc .x2{
+                height: 19px;
+                width: 19px;
+                background:url(../assets/qjiahao.png) no-repeat;
+                margin-top:6px;
+                float: left;
+                margin-left:5px;
+                border:none;
+
+        }
+        .reall .releft .bangdan .x .x1 span .xc .x3{
+                height: 19px;
+                width: 19px;
+                background:url(../assets/qshoucang.png) no-repeat;
+                margin-top:6px;
+                float: left;
+                margin-left:5px;
+                border:none;
+                
+
+        }
+        .reall .releft .bangdan .x .x1 .hui .xc .x1{
+                height: 19px;
+                width: 19px;
+                background:url(../assets/xbofang.png) no-repeat;
+                margin-top:6px;
+                float: left;
+                border:none;
+                margin-left:28px;
+        }
+        .reall .releft .bangdan .x .x1 .hui .xc .x2{
+                height: 19px;
+                width: 19px;
+                background:url(../assets/xjiahao.png) no-repeat;
+                margin-top:6px;
+                float: left;
+                border:none;
+                margin-left:5px;
+        }
+        .reall .releft .bangdan .x .x1 .hui .xc .x3{
+                height: 19px;
+                width: 19px;
+                background:url(../assets/xshoucang.png) no-repeat;
+                margin-top:6px;
+                float: left;
+                border:none;
+                margin-left:5px;
+        }
+        /* 11111 */
+        .reall .releft .bangdan .x .x2 .d{
+            height:31px;
+            width:227px;
+            float: left;
+            background: #e8e8e8;
+            border-radius: 2px;
+            font-size:12px;
+        }
+        .reall .releft .bangdan .x .x2 .d .d1{
+            display: block;
+            width: 120px;
+            height:20px;
+            margin-top:7px;
+            margin-left:145px;
+            text-decoration: none;
+            color:#000;
+        }
+        .reall .releft .bangdan .x .x2 .d .d1:hover{
+            text-decoration: underline;
+        }
+     
+        .reall .releft .bangdan .x .x2 span .xb:hover{
+            text-decoration: underline;
+        }
+
+        .reall .releft .bangdan .x .x2 .x11 {
+            width: 227px;
+            height:130px;
+            background: #f4f4f4;
+        }
+        .reall .releft .bangdan .x .x2 .x11 .x11left{
+            width: 102px;
+            height:101px;
+            background: url(../assets/b2.png);
+            margin-left:9px;
+            margin-top:20px;
+            float: left;
+        }.reall .releft .bangdan .x .x2 .x11 .x11right{
+            width: 100px;
+            height:80px;
+            background: #f4f4f4;
+            float: left;
+            margin-top:25px;
+            position: relative;           
+   
+
+        }
+        .reall .releft .bangdan .x .x2 .x11 .x11right a{
+            text-decoration: none;
+            margin-left:1px;
+            font-size: 14px;
+            color: rgba(0, 0, 0, 0.801);
+            font-weight: bold;
+        }
+        .reall .releft .bangdan .x .x2 .x11 .x11right .a{
+           height: 23px;
+           width: 23px;
+           background: url(../assets/bofang.png);
+           position: absolute;
+           left:0px;
+           top:25px;
+        }
+        .reall .releft .bangdan .x .x2 .x11 .x11right .a:hover{
+            background: url(../assets/bofang1.png);
+}
+        .reall .releft .bangdan .x .x2 .x11 .x11right .b{
+            height: 23px;
+           width: 23px;
+           background: url(../assets/shoucang.png);
+           position: absolute;
+           left:30px;
+           top:26px;
+        }
+        .reall .releft .bangdan .x .x2 .x11 .x11right .b:hover{
+            background: url(../assets/shoucang1.png);
+}
+        .reall .releft .bangdan .x .x2 .x11 .x11right a:hover{
+            text-decoration: underline;
+        }
+        .reall .releft .bangdan .x .x2 span {
+            display: block;
+            width: 227px;
+            height:32px;
+            background: #f4f4f4;
+            position: relative;
+        }.reall .releft .bangdan .x .x2 .hui{
+            display: block;
+            width: 227px;
+            height:32px;
+            background: #e8e8e8;
+            position: relative;
+        }
+        .reall .releft .bangdan .x .x2 span .xa{
+                width: 35px;
+                height:32px;
+                float: left;
+                text-align: center;
+                margin-left: 10px;
+                line-height: 32px;
+                font-size: 13px;
+
+        }
+        .reall .releft .bangdan .x .x2 span .xaa{
+                width: 35px;
+                height:32px;
+                float: left;
+                text-align: center;
+                margin-left: 10px;
+                line-height: 32px;
+                font-size: 13px;
+                color:red;
+        }
+        .reall .releft .bangdan .x .x2 span .xb{
+                width: 150px;
+                height:32px;
+                float: left;
+                line-height: 32px;
+                font-size: 12px;
+                text-decoration: none;
+                color:#000;
+
+        }
+        .reall .releft .bangdan .x .x2 span .xc{
+                width: 105px;
+                height:32px;
+                position: absolute;
+                right:0px;
+
+        }
+        .reall .releft .bangdan .x .x2 span .xc .x1{
+                height: 19px;
+                width: 19px;
+                background:url(../assets/qbofang.png) no-repeat;
+                margin-top:6px;
+                float: left;
+                margin-left:28px;
+                border:none;
+        }
+        .reall .releft .bangdan .x .x2 span .xc .x1:hover{
+            background:url(../assets/qbofang1.png) no-repeat;
+        }.reall .releft .bangdan .x .x2 span .xc .x2:hover{
+            background:url(../assets/qjiahao1.png) no-repeat;
+        }.reall .releft .bangdan .x .x2 span .xc .x3:hover{
+            background:url(../assets/qshoucang1.png) no-repeat;
+        }.reall .releft .bangdan .x .x2 .hui .xc .x1:hover{
+            background:url(../assets/xbofang1.png) no-repeat;
+        }.reall .releft .bangdan .x .x2 .hui .xc .x2:hover{
+            background:url(../assets/xjiahao1.png) no-repeat;
+        }.reall .releft .bangdan .x .x2 .hui .xc .x3:hover{
+            background:url(../assets/xshoucang1.png) no-repeat;
+        }
+        .reall .releft .bangdan .x .x2 span .xc .x2{
+                height: 19px;
+                width: 19px;
+                background:url(../assets/qjiahao.png) no-repeat;
+                margin-top:6px;
+                float: left;
+                margin-left:5px;
+                border:none;
+
+        }
+        .reall .releft .bangdan .x .x2 span .xc .x3{
+                height: 19px;
+                width: 19px;
+                background:url(../assets/qshoucang.png) no-repeat;
+                margin-top:6px;
+                float: left;
+                margin-left:5px;
+                border:none;
+                
+
+        }
+        .reall .releft .bangdan .x .x2 .hui .xc .x1{
+                height: 19px;
+                width: 19px;
+                background:url(../assets/xbofang.png) no-repeat;
+                margin-top:6px;
+                float: left;
+                border:none;
+                margin-left:28px;
+        }
+        .reall .releft .bangdan .x .x2 .hui .xc .x2{
+                height: 19px;
+                width: 19px;
+                background:url(../assets/xjiahao.png) no-repeat;
+                margin-top:6px;
+                float: left;
+                border:none;
+                margin-left:5px;
+        }
+        .reall .releft .bangdan .x .x2 .hui .xc .x3{
+                height: 19px;
+                width: 19px;
+                background:url(../assets/xshoucang.png) no-repeat;
+                margin-top:6px;
+                float: left;
+                border:none;
+                margin-left:5px;
+        }
+        /* 11111 */
+        .reall .releft .bangdan .x .x3 .d{
+            height:31px;
+            width:227px;
+            float: left;
+            background: #e8e8e8;
+            border-radius: 2px;
+            font-size:12px;
+        }
+        .reall .releft .bangdan .x .x3 .d .d1{
+            display: block;
+            width: 120px;
+            height:20px;
+            margin-top:7px;
+            margin-left:145px;
+            text-decoration: none;
+            color:#000;
+        }
+        .reall .releft .bangdan .x .x3 .d .d1:hover{
+            text-decoration: underline;
+        }
+       
+        .reall .releft .bangdan .x .x3 span .xb:hover{
+            text-decoration: underline;
+        }
+      
+
+        .reall .releft .bangdan .x .x3 .x11 {
+            width: 227px;
+            height:130px;
+            background: #f4f4f4;
+        }
+        .reall .releft .bangdan .x .x3 .x11 .x11left{
+            width: 102px;
+            height:101px;
+            background: url(../assets/b3.png);
+            margin-left:9px;
+            margin-top:20px;
+            float: left;
+        }.reall .releft .bangdan .x .x3 .x11 .x11right{
+            width: 100px;
+            height:80px;
+            background: #f4f4f4;
+            float: left;
+            margin-top:25px;
+            position: relative;           
+   
+
+        }
+        .reall .releft .bangdan .x .x3 .x11 .x11right a{
+            text-decoration: none;
+            margin-left:1px;
+            font-size: 14px;
+            color: rgba(0, 0, 0, 0.801);
+            font-weight: bold;
+        }
+        .reall .releft .bangdan .x .x3 .x11 .x11right .a{
+           height: 23px;
+           width: 23px;
+           background: url(../assets/bofang.png);
+           position: absolute;
+           left:0px;
+           top:25px;
+        }
+        .reall .releft .bangdan .x .x3 .x11 .x11right .a:hover{
+            background: url(../assets/bofang1.png);
+}
+        .reall .releft .bangdan .x .x3 .x11 .x11right .b{
+            height: 23px;
+           width: 23px;
+           background: url(../assets/shoucang.png);
+           position: absolute;
+           left:30px;
+           top:26px;
+        }
+        .reall .releft .bangdan .x .x3 .x11 .x11right .b:hover{
+            background: url(../assets/shoucang1.png);
+}
+        .reall .releft .bangdan .x .x3 .x11 .x11right a:hover{
+            text-decoration: underline;
+        }
+        .reall .releft .bangdan .x .x3 span {
+            display: block;
+            width: 227px;
+            height:32px;
+            background: #f4f4f4;
+            position: relative;
+        }.reall .releft .bangdan .x .x3 .hui{
+            display: block;
+            width: 227px;
+            height:32px;
+            background: #e8e8e8;
+            position: relative;
+        }
+        .reall .releft .bangdan .x .x3 span .xa{
+                width: 35px;
+                height:32px;
+                float: left;
+                text-align: center;
+                margin-left: 10px;
+                line-height: 32px;
+                font-size: 13px;
+
+        }
+        .reall .releft .bangdan .x .x3 span .xaa{
+                width: 35px;
+                height:32px;
+                float: left;
+                text-align: center;
+                margin-left: 10px;
+                line-height: 32px;
+                font-size: 13px;
+                color:red;
+        }
+        .reall .releft .bangdan .x .x3 span .xb{
+                width: 150px;
+                height:32px;
+                float: left;
+                line-height: 32px;
+                font-size: 12px;
+                text-decoration: none;
+                color:#000;
+
+        }
+        .reall .releft .bangdan .x .x3 span .xc{
+                width: 105px;
+                height:32px;
+                position: absolute;
+                right:0px;
+
+        }
+        .reall .releft .bangdan .x .x3 span .xc .x1{
+                height: 19px;
+                width: 19px;
+                background:url(../assets/qbofang.png) no-repeat;
+                margin-top:6px;
+                float: left;
+                margin-left:28px;
+                border:none;
+        }
+        .reall .releft .bangdan .x .x3 span .xc .x1:hover{
+            background:url(../assets/qbofang1.png) no-repeat;
+        }.reall .releft .bangdan .x .x3 span .xc .x2:hover{
+            background:url(../assets/qjiahao1.png) no-repeat;
+        }.reall .releft .bangdan .x .x3 span .xc .x3:hover{
+            background:url(../assets/qshoucang1.png) no-repeat;
+        }.reall .releft .bangdan .x .x3 .hui .xc .x1:hover{
+            background:url(../assets/xbofang1.png) no-repeat;
+        }.reall .releft .bangdan .x .x3 .hui .xc .x2:hover{
+            background:url(../assets/xjiahao1.png) no-repeat;
+        }.reall .releft .bangdan .x .x3 .hui .xc .x3:hover{
+            background:url(../assets/xshoucang1.png) no-repeat;
+        }
+        .reall .releft .bangdan .x .x3 span .xc .x2{
+                height: 19px;
+                width: 19px;
+                background:url(../assets/qjiahao.png) no-repeat;
+                margin-top:6px;
+                float: left;
+                margin-left:5px;
+                border:none;
+
+        }
+        .reall .releft .bangdan .x .x3 span .xc .x3{
+                height: 19px;
+                width: 19px;
+                background:url(../assets/qshoucang.png) no-repeat;
+                margin-top:6px;
+                float: left;
+                margin-left:5px;
+                border:none;
+                
+
+        }
+        .reall .releft .bangdan .x .x3 .hui .xc .x1{
+                height: 19px;
+                width: 19px;
+                background:url(../assets/xbofang.png) no-repeat;
+                margin-top:6px;
+                float: left;
+                border:none;
+                margin-left:28px;
+        }
+        .reall .releft .bangdan .x .x3 .hui .xc .x2{
+                height: 19px;
+                width: 19px;
+                background:url(../assets/xjiahao.png) no-repeat;
+                margin-top:6px;
+                float: left;
+                border:none;
+                margin-left:5px;
+        }
+        .reall .releft .bangdan .x .x3 .hui .xc .x3{
+                height: 19px;
+                width: 19px;
+                background:url(../assets/xshoucang.png) no-repeat;
+                margin-top:6px;
+                float: left;
+                border:none;
+                margin-left:5px;
+        }
+        .reall .reright .rs {
+            height: 128px;
+            width: 249px;
+            background:-webkit-linear-gradient(top,#fdfdfd ,#e2e2e2);
+            border:1px solid white;
+            }
+
+        .reall .reright .rs .rs1 {
+            height: 40px;
+            width: 208px;
+            margin-left:25px;
+            margin-top:20px;
+            margin-bottom:15px;
+            color:#888888;
+            line-height: 20px;
+            font-size: 12px;
+            float: left;
+        }
+        .reall .reright .rs .rs2 {
+            display: block;
+            height: 32px;
+            width:101px;
+            background: #d31117;
+            margin-left:70px;
+            border-radius:5px;
+            text-align: center;
+            line-height: 32px;
+            color:#ddd;
+            text-decoration: none;
+            font-size: 13px;
+            float: left;
+        }
+        .reall .reright .rs .rs2:hover{
+            opacity: 0.9;
+        }
     </style>
     
