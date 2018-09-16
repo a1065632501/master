@@ -1,5 +1,6 @@
 <template>
         <div class='reall'>
+            <button class="fanhui" @click="top()" v-show='show3'></button>
             <div class="reshow">
                 <div class="slideshow">
                     <transition-group tag="ul" :name="name">
@@ -179,13 +180,76 @@
                     <div class="rs1">登录网易云音乐，可以享受无限收藏的乐趣，并且无限同步到手机</div>
                     <a href="#" class="rs2">用户登录</a>
                 </div>
-                <div class="rz"></div>
-                <div class="rx"></div>
+                <div class="rz">
+                    <div class="s">
+                        <div class="left">入驻歌手</div>
+                        <a href="#" class="right">查看全部></a>
+                    </div>
+                    <div class="z">
+                        <a href="#" class="z1" v-for="item in zArray">
+                            <div class="z11">
+                                <img :src="item.background">
+                            </div>
+                            <div class="z12">
+                                <span class="z121">{{item.title}}</span>
+                                <span class="z122">{{item.title1}}</span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="x">
+                        <a href="#" class="x1">用户登录</a>
+                    </div>
+                </div>
+                <div class="rx">
+                    <div class="s">
+                        <div class="left">热门主播</div>
+                    </div>
+                    <div class="z">
+                        <span href="#" class="z1" v-for="item in xArray">
+                            <div class="z11">
+                                <img :src="item.background">
+                            </div>
+                            <div class="z12">
+                                <a href="#" class="z121">{{item.title}}<sub class="sub"></sub></a>
+                                <span class="z122">{{item.title1}}</span>
+                               
+                            </div>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="bom">
+                <div class="left">
+                    <span class="l1">
+                        <a href="#" class="d1">关于网易</a>
+                        <a href="#" class="d2">客户服务</a>
+                        <a href="#" class="d3">服务条款</a>
+                        <a href="#" class="d4">网站导航</a>
+                        <a href="#" class="d5">意见反馈</a>
+                    </span>
+                    <span class="l2">
+                        <div class="l21">网易公司版权所有©1997-2018&nbsp&nbsp&nbsp杭州乐读科技有限公司运营：</div>
+                        <a href="#" class="l22">浙网文[2018]3506-263号</a>
+                    </span>
+                    <span class="l3">
+                        <div class="l31">违法和不良信息举报电话：0571-89853516&nbsp&nbsp&nbsp举报邮箱：</div>
+                        <a href="#" class="l32">cloudmusicservice@163.com</a>
+                    </span>
+                </div>
+                <div class="right">
+                    <div class="r1" v-for="item in aArray">
+                        <a href="#"><img :src="item.background"></a>
+                        <div class="r11">{{item.title}}</div>
+                    </div>
+                </div>
             </div>   
         </div>
     </template>
     <script>
         export default {
+            mounted () {
+              window.addEventListener('scroll', this.handleScroll)
+            },
             watch:{
                 mark1:function () {
                      if(this.mark1<0){
@@ -193,14 +257,96 @@
                 } else if(this.mark1>5){
                     this.mark1=0
                 }    
+                },
+                long:function(){
+                    if(this.long>0){ 
+                        this.show3=true
+                    }else{
+                        this.show3=false
+                    }
                 }
             },
             data () {
                 return {
+                    long:0,
+                    show3:false,
                     name:'left',
                     mark:0,
                     mark1:0,
                     name1:'left1',
+                    aArray:[
+                        {   index:0,
+                            background:require('../assets/w1.png'),
+                            title:'独立音乐人'
+                        },
+                        { index:1,
+                            background:require('../assets/w2.png'),
+                            title:'音乐专栏'
+                        },
+                        { index:2,
+                            background:require('../assets/w3.png'),
+                            title:'自媒体'
+                        },
+                        { index:3,
+                            background:require('../assets/w4.png'),
+                            title:'赞赏'
+                        },
+                        { index:4, 
+                            background:require('../assets/w5.png'),
+                            title:'视频奖励'
+                        }],
+                    xArray:[
+                        {   index:0,
+                            background:require('../assets/zz1.png'),
+                            title:'陈立',
+                            title1:'心理学家、美食家陈立教授'
+                        },
+                        { index:1,
+                            background:require('../assets/zz2.png'),
+                            title:'DJ艳秋',
+                            title1:'著名音乐节目主持人'
+                        },
+                        { index:2,
+                            background:require('../assets/zz3.png'),
+                            title:'国家大剧院古典音乐频道',
+                            title1:'国家大剧院古典音乐官方'
+                        },
+                        { index:3,
+                            background:require('../assets/zz4.png'),
+                            title:'谢谢收听',
+                            title1:'南京电台主持人王馨'
+                        },
+                        { index:4, 
+                            background:require('../assets/zz5.png'),
+                            title:'DJ苏晓',
+                            title1:'独立DJ,CRI环球旅游广播电台主持人'
+                        }],
+                    zArray:[
+                        {   index:0,
+                            background:require('../assets/v1.png'),
+                            title:'张惠妹aMEI',
+                            title1:'台湾歌手张惠妹'
+                        },
+                        { index:1,
+                            background:require('../assets/v2.png'),
+                            title:'Fine乐团',
+                            title1:'独立音乐人'
+                        },
+                        { index:2,
+                            background:require('../assets/v3.png'),
+                            title:'禹晓利',
+                            title1:'民谣歌手、中国现代歌手'
+                        },
+                        { index:3,
+                            background:require('../assets/v4.png'),
+                            title:'音乐人赵雷',
+                            title1:'民谣歌手'
+                        },
+                        { index:4,
+                            background:require('../assets/v5.png'),
+                            title:'王三簙',
+                            title1:'音乐人'
+                        }],
                     fArray:[
                         {
                             index:0,
@@ -480,11 +626,18 @@
                 }
             },
             methods: {
+                handleScroll(){
+                    var scrollTop = window.pageYOffset
+                    this.long=scrollTop
+                },
                 autoPlay () {
                 this.mark++;
                 if (this.mark === 8) { //当遍历到最后一张图片置零
                     this.mark = 0
                 }
+                },
+                top(){
+                    window.scroll(0,0)
                 },
                 play () {
                 setInterval(this.autoPlay, 4000)
@@ -524,6 +677,22 @@
             margin: 0;
             padding: 0;
             list-style: none;
+        }
+ 
+        .reall .fanhui{
+            position: fixed;
+            width: 45px;
+            height:45px;
+            right:125px;
+            top:450px;
+            display: block;
+            background:url(../assets/buttom.png);
+            border:1px solid rgb(170, 169, 169);
+            outline:none ;
+            border-radius: 3px;
+        }
+        .reall .fanhui:hover{
+            background:url(../assets/buttom1.png);
         }
         .reall .reshow {
             width:100%;
@@ -695,6 +864,7 @@
             margin-left:188px;
             background: #fff;
             float: left;
+            border-left:1px solid #ddd;
         }
         .reall .reright{
             width:251px;
@@ -948,7 +1118,7 @@
         }
         .reall .releft .bangdan {
             width:724px;
-           height:800px;
+           height:590px;
         }
         .reall .releft .bangdan .s{
             width:684px;
@@ -1664,5 +1834,348 @@
         .reall .reright .rs .rs2:hover{
             opacity: 0.9;
         }
+        .reall .reright .rz{
+            height: 500px;
+            width: 249px;
+        }
+        .reall .reright .rz .s{
+            width: 212px;
+            height: 30px;
+            background: #ffffff;
+            margin-left: 20px;
+            margin-top: 7px;
+            margin-bottom:5px;
+            float: left;
+            border-bottom: 1px solid #ddd;
+            font-weight: bold;
+        }.reall .reright .rz .s .left{
+            width: 49px;
+            height: 30px;
+            float: left;
+            text-align: center;
+            line-height: 30px;
+            font-size: 12px;
+        }.reall .reright .rz .s .right{
+            display: block;
+            width: 60px;
+            height:30px;
+            float: left;
+            text-align: center;
+            line-height: 30px;
+            font-size: 12px;
+            margin-left:100px;
+            text-decoration: none;
+            color: rgb(167, 165, 165);
+        }
+        .reall .reright .rz .s .right:hover{
+            text-decoration: underline;
+        }
+        .reall .reright .rz .z {
+            width: 212px;
+            height: 405px;
+            margin-left: 20px;
+            float: left;
+        }
+        .reall .reright .rz .z .z1{
+            display: block;
+            height:62px;
+            width: 210px;
+            margin-top: 14px;
+            background: #fafafa;
+            text-decoration: none;
+            border:1px solid #ddd;
+        }
+        .reall .reright .rz .z .z1:hover{
+            background: #f4f4f4;
+
+        }
+        .reall .reright .rz .z .z1 .z11{
+            float: left;
+            width: 62px;
+            height: 62px;    
+        }.reall .reright .rz .z .z1 .z11 img{
+            background: no-repeat;
+            width: 62px;
+            height: 62px;    
+        }   
+        .reall .reright .rz .z .z1 .z12{
+            width: 120px;
+            height: 62px;
+            float: left;
+            margin-left:10px;
+            font-size: 13px;
+        }
+        .reall .reright .rz .z .z1 .z121{
+            display: block;
+            height: 31px;
+            width:120px;
+            line-height: 31px;
+            font-weight:bold;
+            color: black;
+            
+        }
+        .reall .reright .rz .z .z1 .z122{
+            display: block;
+            height: 31px;
+            width:110px;
+            line-height: 31px;
+            opacity: 0.8;
+            overflow: hidden;
+            text-overflow:ellipsis;
+            white-space: nowrap;
+            color: #403c3b;
+        }
+        .reall .reright .rz .x .x1 {
+            display: block;
+            height:32px;
+            width: 210px;
+            border:1px solid rgb(168, 166, 166);
+            margin-left:20px;
+            border-radius:3px;
+            text-align: center;
+            line-height: 32px;
+            color:rgb(0, 0, 0);
+            text-decoration: none;
+            font-size: 13px;
+            float: left;
+        }
+        .reall .reright .rz .x .x1:hover{
+            border:1px solid #ddd;
+
+        }
+        .reall .reright .rx{
+            height: 400px;
+            width: 249px;
+        }
+        .reall .reright .rx .s{
+            width: 212px;
+            height: 30px;
+            background: #ffffff;
+            margin-left: 20px;
+            margin-top: 7px;
+            margin-bottom:10px;
+            float: left;
+            border-bottom: 1px solid #ddd;
+            font-weight: bold;
+        }.reall .reright .rx .s .left{
+            width: 49px;
+            height: 30px;
+            float: left;
+            text-align: center;
+            line-height: 30px;
+            font-size: 12px;
+        }
+        .reall .reright .rx .s .right:hover{
+            text-decoration: underline;
+        }
+        .reall .reright .rx .z {
+            width: 212px;
+            height: 405px;
+            margin-left: 20px;
+            float: left;
+        }
+        .reall .reright .rx .z .z1{
+            display: block;
+            height:42px;
+            width: 210px;
+            margin-top: 7px;
+            text-decoration: none;
+            
+
+        }
+
+        .reall .reright .rx .z .z1 .z11{
+            float: left;
+            width: 42px;
+            height: 42px;    
+        }.reall .reright .rx .z .z1 .z11 img{
+            background: no-repeat;
+            width: 42px;
+            height: 42px;    
+        }   
+        .reall .reright .rx .z .z1 .z12{
+            width: 150px;
+            height: 42px;
+            float: left;   
+            margin-left:10px;
+            font-size: 12px;
+        } 
+   
+        .reall .reright .rx .z .z1 .z121{
+            display: inline-block;
+            height: 21px;
+            width:auto;
+            line-height: 21px;
+            color: black;
+            text-decoration: none;
+
+            
+        }
+        .reall .reright .rx .z .z1 .z121 .sub{
+            background: url(../assets/biao.png) no-repeat;
+            width: 13px;
+            height: 13px;
+            font-size: 100%;
+            font-style: normal;
+            display: inline-block;
+            margin-left:5px;
+        }
+        .reall .reright .rx .z .z1 .z121:hover{
+            text-decoration: underline;
+        }
+        .reall .reright .rx .z .z1 .z122{
+            display: block;
+            height: 21px;
+            width:120px;
+            line-height: 21px;
+            opacity: 0.8;
+            overflow: hidden;
+            text-overflow:ellipsis;
+            white-space: nowrap;
+            color: #403c3b;
+        }
+        .reall .bom {
+            width:100%;
+            height:140px;
+            float: left;
+            border:1px solid #ddd;
+            background: #f2f2f2;
+        }
+        .reall .bom .left{
+            height:140px;
+            width:550px;
+            float: left;
+            background:#f2f2f2;
+            margin-left: 186px;
+        }.reall .bom .right{
+            height:140px;
+            width:540px;
+            float: left;
+            background:#f2f2f2;
+        }
+        .reall .bom .left .l1{
+            width:500px;
+            height: 20px;
+            float: left;
+            margin-top: 23px;
+            color: #8d8683;
+            font-size: 12px;
+
+        }
+        .reall .bom .left .l2{
+            width:500px;
+            height: 20px;
+            margin-top: 0px;
+            float: left;
+            font-size: 12px;
+            color: #403c3b;
+        }.reall .bom .left .l2 .l21{
+            width:340px;
+            height: 20px;
+            margin-top: 3px;
+            float: left;
+            font-size: 12px;
+            color: #403c3b;
+        }.reall .bom .left .l2 .l22{
+            display: block;
+            width:150px;
+            height: 20px;
+            margin-top: 3px;
+            float: left;
+            font-size: 12px;
+            color: #403c3b;
+            text-decoration: none;
+        }.reall .bom .left .l2 .l22:hover{
+            text-decoration: underline;
+           
+        }
+        .reall .bom .left .l3{
+            width:500px;
+            height: 20px;
+            float: left;
+            margin-top: 3px;
+            font-size: 12px;
+            color: #403c3b;
+
+
+        }
+        .reall .bom .left .l3 .l31{
+            width:310px;
+            height: 20px;
+            margin-top: 3px;
+            float: left;
+            font-size: 12px;
+            color: #403c3b;
+        }.reall .bom .left .l3 .l32{
+            display: block;
+            width:150px;
+            height: 20px;
+            margin-top: 3px;
+            float: left;
+            font-size: 12px;
+            color: #403c3b;
+            text-decoration: none;
+        }.reall .bom .left .l3 .l32:hover{
+            text-decoration: underline;
+           
+        }
+        .reall .bom .left .l1 a{
+            display: block;
+            float: left;
+            width:69px;
+            height: 10px;
+            text-align: center;
+            line-height: 10px;
+            text-decoration: none;
+            border-left: 1px solid rgb(143, 142, 142);
+            color: #7a7573;
+    }
+    .reall .bom .left .l1 .d1{
+        border:none;
+        margin-left:-10px;
+        
+    }
+    .reall .bom .left .l1 .d1:hover{
+        text-decoration: underline;
+    }
+    .reall .bom .left .l1 .d2:hover{
+        text-decoration: underline;
+    }
+    .reall .bom .left .l1 .d3:hover{
+        text-decoration: underline;
+    }
+    .reall .bom .left .l1 .d4:hover{
+        text-decoration: underline;
+    }
+    .reall .bom .left .l1 .d5:hover{
+        text-decoration: underline;
+    }
+    .reall .bom .right .r1{
+        width: 53px;
+        height: 66px;
+        margin-top: 20px;
+        margin-left: 20px;
+        margin-right: 20px;
+        float: left;
+    }
+    .reall .bom .right .r1 a{
+        display: block;
+        width:53px;
+        height:46px;
+        float: left;
+  
+    }.reall .bom .right .r1 div{
+        display: block;
+        width:63px;
+        height:20px;
+        float: left;
+        text-align: center;
+        line-height: 20px;
+        color:#989898;
+        font-size: 12px;
+        margin-left:-4px;
+        transform:scale(0.8)
+  
+    }
     </style>
     

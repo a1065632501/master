@@ -29,8 +29,8 @@
         .all2{
             min-width: 1300px;
             width:100%;
-            height:2020px;
-            background:pink;
+            height:1881px;
+            background:#f5f5f5;
         }
         .logo {
             min-width: 1300px;
