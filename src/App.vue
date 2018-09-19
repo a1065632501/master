@@ -7,7 +7,7 @@
 
 <script>
 export default {
-  name: 'App'
+  name: 'App',       
 }
 </script>
 
@@ -21,4 +21,5 @@ export default {
   height:100%;
   position: relative;
 }
+
 </style>
