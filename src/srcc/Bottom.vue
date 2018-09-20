@@ -1,4 +1,4 @@
-<template>
+<!-- <template>
     <div class='all2'>
         <div class='logo'>
             <a href="" class="a1">推荐</a>
@@ -67,4 +67,4 @@ export default {
         margin-left:28px;
     }
 
-</style>
+</style> -->

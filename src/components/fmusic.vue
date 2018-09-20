@@ -8,16 +8,59 @@
                 <router-link :to='{path:"/fmusic/singer"}' class="a5">歌手</router-link>
                 <router-link :to='{path:"/fmusic/news"}' class="a6">新碟上架</router-link>
             </div>
+            <button class="fanhui" @click="top()" v-show='show3'></button>
             <router-view></router-view>
             
         </div>  
     </template>
     <script>
     export default {
-        name: 'Bottom'
-    }
+        mounted () {
+              window.addEventListener('scroll', this.handleScroll)
+            },
+            watch:{
+                long:function(){
+                    if(this.long>0){ 
+                        this.show3=true
+                    }else{
+                        this.show3=false
+                    }
+                }
+            },
+            data () {
+                return {
+                    long:0,
+                    show3:false,
+                }
+            },
+            methods: {
+                handleScroll(){
+                    var scrollTop = window.pageYOffset
+                    this.long=scrollTop
+                },           
+                top(){
+                    window.scroll(0,0)
+                },
+                
+            }
+        }
     </script>
     <style scoped>
+         .all2 .fanhui{
+            position: fixed;
+            width: 45px;
+            height:45px;
+            right:125px;
+            top:450px;
+            display: block;
+            background:url(../assets/buttom.png);
+            border:1px solid rgb(170, 169, 169);
+            outline:none ;
+            border-radius: 3px;
+        }
+        .sll2 .fanhui:hover{
+            background:url(../assets/buttom1.png);
+        }
         .all2 .shanzhai {
             width: 100%;
             height:200px;

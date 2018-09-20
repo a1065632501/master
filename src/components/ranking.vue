@@ -4,7 +4,7 @@
             <div class="top">
                 <div class="t1">云音乐特色榜</div>
                 <div class="t2">
-                    <a href="#" class="z1" v-for="item in zArray">
+                    <a href="#" class="z1" v-for="item in zArray" v-on:click="change(item.index)">
                         <div class="z11">
                             <img :src="item.background">
                         </div>
@@ -32,7 +32,9 @@
         </div>
         <div class="right">
             <div class="top">
-                <div class="l"></div>
+                <div class="l">
+                    <img :src="link">
+                </div>
                 <div class="r">
                     <div class="s">{{title}}</div>
                     <div class="z">
@@ -52,20 +54,508 @@
                 </div>
 
             </div>
-            <div class="bottom"></div>
+            <div class="bottom">
+                <div class="s">
+                    <div class="s1">歌曲列表</div>
+                    <div class="s2">100首</div>
+                    <div class="s3"><div class="s32">播放 ：</div>
+                        <div class="s31">{{mount}}</div>
+                        次</div>
+                </div>
+                <div class="x">
+                    <div class="x1">
+                        <div class="x11"></div>
+                        <div class="x12">标题</div>
+                        <div class="x13">时长</div>
+                        <div class="x14">歌手</div>
+                    </div>
+                    <div class="x2">
+                        <div class="x21" :class="{hui:item.number%2!==0}"v-for="item in aArray" v-on:mouseenter="item.a=true" v-on:mouseleave="item.a=false">
+                            <div class="x211">{{item.number}}</div>
+                            <div class="x212">
+                                <img :src='item.background'>
+                            </div>
+                            <div class="x213">
+                                <img :src='item.background1'>
+                            </div>
+                            <div class="x214">
+                            
+                            </div>
+                            <div class="x215">{{item.title}}</div>
+                            <div class="x216">
+                            </div>
+                            <div class="x218">{{item.singer}}</div>
+                            <div class="x217">
+                                <div v-show='!item.a' class='time'>{{item.time}}</div>
+                                <div v-show='item.a' class="time1">
+                                    <a href='#' class="img1"></a>
+                                    <a href='#' class="img2"></a>
+                                    <a href='#' class="img3"></a>
+                                    <a href='#' class="img4"></a>
+                                </div>
+                            </div>
+                       
+                        </div>
+                    </div>
+                    <div class="x3">
+                        <div class="x31" :class="{hui1:item.number%2===0}"v-for="item in bArray" v-on:mouseenter="item.b=true" v-on:mouseleave="item.b=false">
+                            <div class="x311">{{item.number}}</div>
+                            <div class="x312">
+                                    <img :src='item.background'>
+                            </div>
+                           
+                            <div class="x314">
+                            </div>
+                            <div class="x315">{{item.title}}</div>
+                            <div class="x316">
+                            </div>
+                            <div class="x318">{{item.singer}}</div>
+                            <div class="x317">
+                                <div v-show='!item.b' class='x131'>{{item.time}}</div>
+                                <div v-show='item.b' class="time1">
+                                        <a href='#' class="img1"></a>
+                                        <a href='#' class="img2"></a>
+                                        <a href='#' class="img3"></a>
+                                        <a href='#' class="img4"></a>
+                                    </div>
+                            </div>
+                           
+                        </div>
+                    </div>
+                </div>
+            </div>
 
         </div>
     </div>
 </template>
     <script>
         export default {   
+        
             data () {
                 return{
+                    link:require('../assets/qq1.png'),
+                    mount:1313014734,
                     discuss:136265,
                     relay:4133,
                     save:1230005,
                     title:'云音乐飙升榜',
                     time:'09月19日',
+                    bArray:[
+                        {   number:1,
+                            background:require('../assets/n11.png'),
+                            background1:require('../assets/n2.png'),
+                            background3:require('../assets/n4.png'),
+                            title:'Killshot',
+                            singer:'Eminem',
+                            time:'03:14',
+                            b:false
+                        },
+                        {  number:2,
+                            background:require('../assets/n11.png'),
+                            background1:require('../assets/n2.png'),
+                            background3:require('../assets/n4.png'),
+                            title:'Venice',
+                            singer:'LaNa Del Rey',
+                            time:'09:36',
+                            b:false
+                        },
+                        {  number:3,
+                            background:require('../assets/n11.png'),
+                            background1:require('../assets/n2.png'),
+                            background3:require('../assets/n4.png'),
+                            title:'某某',
+                            singer:'孟凡明',
+                            time:'04:01',
+                            b:false
+                        },
+                        {   number:4,
+                            background:require('../assets/n11.png'),
+                            background1:require('../assets/n2.png'),
+                            background3:require('../assets/n4.png'),
+                            title:'Killshot',
+                            singer:'Eminem',
+                            time:'03:14',
+                            b:false
+                        },
+                        {  number:5,
+                            background:require('../assets/n11.png'),
+                            background1:require('../assets/n2.png'),
+                            background3:require('../assets/n4.png'),
+                            title:'Venice',
+                            singer:'LaNa Del Rey',
+                            time:'09:36',
+                            b:false
+                        },
+                        {  number:6,
+                            background:require('../assets/n11.png'),
+                            background1:require('../assets/n2.png'),
+                            background3:require('../assets/n4.png'),
+                            title:'某某',
+                            singer:'孟凡明',
+                            time:'04:01',
+                            b:false
+                        },
+                        {   number:7,
+                            background:require('../assets/n11.png'),
+                            background1:require('../assets/n2.png'),
+                            background3:require('../assets/n4.png'),
+                            title:'Killshot',
+                            singer:'Eminem',
+                            time:'03:14',
+                            b:false
+                        },
+                        {  number:8,
+                            background:require('../assets/n11.png'),
+                            background1:require('../assets/n2.png'),
+                            background3:require('../assets/n4.png'),
+                            title:'Venice',
+                            singer:'LaNa Del Rey',
+                            time:'09:36',
+                            b:false
+                        },
+                        {  number:9,
+                            background:require('../assets/n11.png'),
+                            background1:require('../assets/n2.png'),
+                            background3:require('../assets/n4.png'),
+                            title:'某某',
+                            singer:'孟凡明',
+                            time:'04:01',
+                            b:false
+                        },
+                        {   number:10,
+                            background:require('../assets/n11.png'),
+                            background1:require('../assets/n2.png'),
+                            background3:require('../assets/n4.png'),
+                            title:'Killshot',
+                            singer:'Eminem',
+                            time:'03:14',
+                            b:false
+                        },
+                        {  number:11,
+                            background:require('../assets/n11.png'),
+                            background1:require('../assets/n2.png'),
+                            background3:require('../assets/n4.png'),
+                            title:'Venice',
+                            singer:'LaNa Del Rey',
+                            time:'09:36',
+                            b:false
+                        },
+                        {  number:12,
+                            background:require('../assets/n11.png'),
+                            background1:require('../assets/n2.png'),
+                            background3:require('../assets/n4.png'),
+                            title:'某某',
+                            singer:'孟凡明',
+                            time:'04:01',
+                            b:false
+                        },
+                        {   number:13,
+                            background:require('../assets/n11.png'),
+                            background1:require('../assets/n2.png'),
+                            background3:require('../assets/n4.png'),
+                            title:'Killshot',
+                            singer:'Eminem',
+                            time:'03:14',
+                            b:false
+                        },
+                        {  number:14,
+                            background:require('../assets/n11.png'),
+                            background1:require('../assets/n2.png'),
+                            background3:require('../assets/n4.png'),
+                            title:'Venice',
+                            singer:'LaNa Del Rey',
+                            time:'09:36',
+                            b:false
+                        },
+                        {  number:15,
+                            background:require('../assets/n11.png'),
+                            background1:require('../assets/n2.png'),
+                            background3:require('../assets/n4.png'),
+                            title:'某某',
+                            singer:'孟凡明',
+                            time:'04:01',
+                            b:false
+                        },
+                        {   number:16,
+                            background:require('../assets/n11.png'),
+                            background1:require('../assets/n2.png'),
+                            background3:require('../assets/n4.png'),
+                            title:'Killshot',
+                            singer:'Eminem',
+                            time:'03:14',
+                            b:false
+                        },
+                        {  number:17,
+                            background:require('../assets/n11.png'),
+                            background1:require('../assets/n2.png'),
+                            background3:require('../assets/n4.png'),
+                            title:'Venice',
+                            singer:'LaNa Del Rey',
+                            time:'09:36',
+                            b:false
+                        },
+                        {  number:18,
+                            background:require('../assets/n11.png'),
+                            background1:require('../assets/n2.png'),
+                            background3:require('../assets/n4.png'),
+                            title:'某某',
+                            singer:'孟凡明',
+                            time:'04:01',
+                            b:false
+                        },
+                        {   number:19,
+                            background:require('../assets/n11.png'),
+                            background1:require('../assets/n2.png'),
+                            background3:require('../assets/n4.png'),
+                            title:'Killshot',
+                            singer:'Eminem',
+                            time:'03:14',
+                            b:false
+                        },
+                        {  number:20,
+                            background:require('../assets/n11.png'),
+                            background1:require('../assets/n2.png'),
+                            background3:require('../assets/n4.png'),
+                            title:'Venice',
+                            singer:'LaNa Del Rey',
+                            time:'09:36',
+                            b:false
+                        },
+                        {  number:21,
+                            background:require('../assets/n11.png'),
+                            background1:require('../assets/n2.png'),
+                            background3:require('../assets/n4.png'),
+                            title:'某某',
+                            singer:'孟凡明',
+                            time:'04:01',
+                            b:false
+                        },
+                        {   number:22,
+                            background:require('../assets/n11.png'),
+                            background1:require('../assets/n2.png'),
+                            background3:require('../assets/n4.png'),
+                            title:'Killshot',
+                            singer:'Eminem',
+                            time:'03:14',
+                            b:false
+                        },
+                        {  number:23,
+                            background:require('../assets/n11.png'),
+                            background1:require('../assets/n2.png'),
+                            background3:require('../assets/n4.png'),
+                            title:'Venice',
+                            singer:'LaNa Del Rey',
+                            time:'09:36',
+                            b:false
+                        },
+                        {  number:24,
+                            background:require('../assets/n11.png'),
+                            background1:require('../assets/n2.png'),
+                            background3:require('../assets/n4.png'),
+                            title:'某某',
+                            singer:'孟凡明',
+                            time:'04:01',
+                            b:false
+                        },
+                        {   number:25,
+                            background:require('../assets/n11.png'),
+                            background1:require('../assets/n2.png'),
+                            background3:require('../assets/n4.png'),
+                            title:'Killshot',
+                            singer:'Eminem',
+                            time:'03:14',
+                            b:false
+                        },
+                        {  number:26,
+                            background:require('../assets/n11.png'),
+                            background1:require('../assets/n2.png'),
+                            background3:require('../assets/n4.png'),
+                            title:'Venice',
+                            singer:'LaNa Del Rey',
+                            time:'09:36',
+                            b:false
+                        },
+                        {  number:27,
+                            background:require('../assets/n11.png'),
+                            background1:require('../assets/n2.png'),
+                            background3:require('../assets/n4.png'),
+                            title:'某某',
+                            singer:'孟凡明',
+                            time:'04:01',
+                            b:false
+                        },
+                        {   number:28,
+                            background:require('../assets/n11.png'),
+                            background1:require('../assets/n2.png'),
+                            background3:require('../assets/n4.png'),
+                            title:'Killshot',
+                            singer:'Eminem',
+                            time:'03:14',
+                            b:false
+                        },
+                        {  number:29,
+                            background:require('../assets/n11.png'),
+                            background1:require('../assets/n2.png'),
+                            background3:require('../assets/n4.png'),
+                            title:'Venice',
+                            singer:'LaNa Del Rey',
+                            time:'09:36',
+                            b:false
+                        },
+                        {  number:30,
+                            background:require('../assets/n11.png'),
+                            background1:require('../assets/n2.png'),
+                            background3:require('../assets/n4.png'),
+                            title:'某某',
+                            singer:'孟凡明',
+                            time:'04:01',
+                            b:false
+                        },
+                        {   number:31,
+                            background:require('../assets/n11.png'),
+                            background1:require('../assets/n2.png'),
+                            background3:require('../assets/n4.png'),
+                            title:'Killshot',
+                            singer:'Eminem',
+                            time:'03:14',
+                            b:false
+                        },
+                        {  number:32,
+                            background:require('../assets/n11.png'),
+                            background1:require('../assets/n2.png'),
+                            background3:require('../assets/n4.png'),
+                            title:'Venice',
+                            singer:'LaNa Del Rey',
+                            time:'09:36',
+                            b:false
+                        },
+                        {  number:33,
+                            background:require('../assets/n11.png'),
+                            background1:require('../assets/n2.png'),
+                            background3:require('../assets/n4.png'),
+                            title:'某某',
+                            singer:'孟凡明',
+                            time:'04:01',
+                            b:false
+                        },
+                        {   number:34,
+                            background:require('../assets/n11.png'),
+                            background1:require('../assets/n2.png'),
+                            background3:require('../assets/n4.png'),
+                            title:'Killshot',
+                            singer:'Eminem',
+                            time:'03:14',
+                            b:false
+                        },
+                        {  number:35,
+                            background:require('../assets/n11.png'),
+                            background1:require('../assets/n2.png'),
+                            background3:require('../assets/n4.png'),
+                            title:'Venice',
+                            singer:'LaNa Del Rey',
+                            time:'09:36',
+                            b:false
+                        },
+                        {  number:36,
+                            background:require('../assets/n11.png'),
+                            background1:require('../assets/n2.png'),
+                            background3:require('../assets/n4.png'),
+                            title:'某某',
+                            singer:'孟凡明',
+                            time:'04:01',
+                            b:false
+                        },
+                        {   number:37,
+                            background:require('../assets/n11.png'),
+                            background1:require('../assets/n2.png'),
+                            background3:require('../assets/n4.png'),
+                            title:'Killshot',
+                            singer:'Eminem',
+                            time:'03:14',
+                            b:false
+                        },
+                        {  number:38,
+                            background:require('../assets/n11.png'),
+                            background1:require('../assets/n2.png'),
+                            background3:require('../assets/n4.png'),
+                            title:'Venice',
+                            singer:'LaNa Del Rey',
+                            time:'09:36',
+                            b:false
+                        },
+                        {  number:39,
+                            background:require('../assets/n11.png'),
+                            background1:require('../assets/n2.png'),
+                            background3:require('../assets/n4.png'),
+                            title:'某某',
+                            singer:'孟凡明',
+                            time:'04:01',
+                            b:false
+                        },
+                        {   number:40,
+                            background:require('../assets/n11.png'),
+                            background1:require('../assets/n2.png'),
+                            background3:require('../assets/n4.png'),
+                            title:'Killshot',
+                            singer:'Eminem',
+                            time:'03:14',
+                            b:false
+                        },
+                        {  number:41,
+                            background:require('../assets/n11.png'),
+                            background1:require('../assets/n2.png'),
+                            background3:require('../assets/n4.png'),
+                            title:'Venice',
+                            singer:'LaNa Del Rey',
+                            time:'09:36',
+                            b:false
+                        },
+                        {  number:42,
+                            background:require('../assets/n11.png'),
+                            background1:require('../assets/n2.png'),
+                            background3:require('../assets/n4.png'),
+                            title:'某某',
+                            singer:'孟凡明',
+                            time:'04:01',
+                            b:false
+                        },
+                        {  number:43,
+                            background:require('../assets/n11.png'),
+                            background1:require('../assets/n2.png'),
+                            background3:require('../assets/n4.png'),
+                            title:'某某',
+                            singer:'孟凡明',
+                            time:'04:01',
+                            b:false
+                        },
+                        
+                    
+                    ],
+                    aArray:[
+                        {   number:1,
+                            background:require('../assets/n1.png'),
+                            background1:require('../assets/n2.png'),
+                            title:'Killshot',
+                            singer:'Eminem',
+                            time:'03:14',
+                            a:false
+                        },
+                        {  number:2,
+                            background:require('../assets/n1.png'),
+                            background1:require('../assets/n21.png'),
+                            title:'Venice',
+                            singer:'LaNa Del Rey',
+                            time:'09:36',
+                            a:false
+                        },
+                        {  number:3,
+                            background:require('../assets/n1.png'),
+                            background1:require('../assets/n22.png'),
+                            title:'某某',
+                            singer:'孟凡明',
+                            time:'04:01',
+                            a:false
+                        }],
                     zArray:[
                         {   index:0,
                             background:require('../assets/t1.png'),
@@ -205,6 +695,50 @@
                             title1:'每周五更新'
                         }
                     ],
+                }
+            },
+            methods:{
+                change(n){
+                  
+                    switch(n)
+                    {
+                        case 0:
+                         this.mount=1313014734;
+                         this.discuss=136265;
+                         this.relay=4133;
+                         this.save=1230005;
+                         this.title='云音乐飙升榜';
+                         this.time='09月19日';
+                         this.link=require('../assets/qq1.png');
+                         break;
+                         case 1:
+                         this.mount=838945408;
+                         this.discuss=103725;
+                         this.relay=5446;
+                         this.save=1015835;
+                         this.title='云音乐新歌榜';
+                         this.time='刚刚';
+                         this.link=require('../assets/qq2.png');
+                         break;
+                         case 2:
+                         this.mount=991253766;
+                         this.discuss=106563;
+                         this.relay=5612;
+                         this.save=141382;
+                         this.title='网易原创歌曲榜';
+                         this.time='09月19日';
+                         this.link=require('../assets/qq3.png');
+                         break;
+                         case 3:
+                         this.mount=871212005;
+                         this.discuss=561276;
+                         this.relay=5418;
+                         this.save=2761862;
+                         this.title='云音乐热歌榜';
+                         this.time='刚刚';
+                         this.link=require('../assets/qq4.png');
+                         break;
+                    }
                 }
             }
           
@@ -386,14 +920,17 @@
             width: 660px;
             height: 1560px;
             margin: 0px 0px 0px 40px;
-            background: rgb(250, 250, 173);
         }
         .rank .right .top .l{
             width: 160px;
             height: 160px;
-            background: url(../assets/qq1.png) no-repeat;
             float: left;
-        }.rank .right .top .r{
+        }
+        .rank .right .top .l img{
+            width: 160px;
+            height: 160px;
+        }
+        .rank .right .top .r{
             width: 500px;
             height: 160px;
             float: left;
@@ -563,6 +1100,298 @@
         .rank .right .top .r .x .x6:hover{
             border:1px solid #d6d6d6;
            
+        }
+        .rank .right .bottom .s{
+            width: 662px;
+            height: 35px;
+            border-bottom: 2px solid #c20c0c;
+        }
+        .rank .right .bottom .s .s1{
+            width: 85px;
+            height: 35px;
+            float: left;
+            line-height: 35px;
+            font-size: 20px;
+        }
+        .rank .right .bottom .s .s2{
+            width: 100px;
+            height: 35px;
+            float: left;
+            margin-left: 15px;
+            font-size: 12px;
+            line-height: 40px;
+
+        }
+        .rank .right .bottom .s .s3{
+            width: 130px;
+            height: 35px;
+            float: left;
+            margin-left:330px;
+            font-size: 12px;
+            line-height: 35px;
+
+        }
+        .rank .right .bottom .s .s3 .s31{
+           color:rgb(214, 1, 1);
+           font-weight: bold;
+           float: left;
+        }
+        .rank .right .bottom .s .s3 .s32{
+    
+           float: left;
+        }
+        .rank .right .bottom .x{
+            width: 660px;
+            height:1535px;
+            border: 1px solid #ddd;
+            border-top: none;
+        }
+        .rank .right .bottom .x .x1{
+            width:660px;
+            height: 35px;
+            background: -webkit-linear-gradient( top,#fff,#f1f1f1);
+        }
+        .rank .right .bottom .x .x1 .x11{
+            width:78px;
+            height: 35px;
+            float: left;
+
+            border-right: 1px solid #ddd;
+        }
+        .rank .right .bottom .x .x1 .x12{
+            width:390px;
+            height: 35px;
+            float: left;
+            margin-left: 10px;
+            line-height: 35px;
+            border-right: 1px solid #ddd;
+            font-size: 13px;
+            color: rgb(129, 129, 129);
+        }
+        .rank .right .bottom .x .x1 .x13{
+            width:76px;
+            height: 35px;
+            border-right: 1px solid #ddd;
+            float: left;
+            line-height: 35px;
+            font-size: 13px;
+            margin-left: 10px;
+            color: rgb(129, 129, 129);
+
+        }
+        .rank .right .bottom .x .x1 .x14{
+            width:60px;
+            height: 35px;
+
+            float: left;
+            line-height: 35px;
+            font-size: 13px;
+            color: rgb(129, 129, 129);
+            margin-left: 10px;
+        }
+        .rank .right .bottom .x .x2{
+            border-top: 1px solid #ddd;
+            width: 660px;
+            height: 210px;
+        }
+        .rank .right .bottom .x .x2 .hui{
+            width: 660px;
+            height:70px;
+            background: #f7f7f7;
+
+        }
+        
+        .rank .right .bottom .x .x2 .x21{
+            width: 660px;
+            height:70px;
+             float: left;
+        }
+        .rank .right .bottom .x .x2 .x21 img{
+            width: 50px;  
+            height: 50px;
+            margin-top: 10px;
+
+        }
+        .rank .right .bottom .x .x2 .x21 div{
+            line-height: 70px;
+            text-align: center;
+            height: 70px;
+            float: left;
+            font-size: 12px;
+            background: no-repeat;
+        }
+        .rank .right .bottom .x .x2 .x21 .x211{
+            width: 48px;
+        }
+        .rank .right .bottom .x .x2 .x21 .x212{
+            width: 41px;
+        }
+        .rank .right .bottom .x .x2 .x21 .x213{
+            width: 50px;
+        }
+        .rank .right .bottom .x .x2 .x21 .x214{
+            margin-left:15px;
+            width: 28px;
+            background: url(../assets/n3.png)no-repeat 0px 25px;
+         
+        }.rank .right .bottom .x .x2 .x21 .x214:hover{
+           background: url(../assets/n31.png)no-repeat 0px 25px;
+        }
+        .rank .right .bottom .x .x2 .x21 .x215{
+            text-align: left;
+        }
+        .rank .right .bottom .x .x2 .x21 .x216{
+            width: 50px;
+            
+            background: url(../assets/n4.png)no-repeat 2px 28px;
+        }
+        .rank .right .bottom .x .x2 .x21 .x217{
+            width: 90px;
+            text-align: left;
+            float: right;
+        }
+        .rank .right .bottom .x .x2 .x21 .x218{
+            width:83px;
+            text-align:left;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            float: right;
+        }
+        .rank .right .bottom .x .x2 .x21 .x217 .time1{
+            height: 20px;
+            width: 80px;
+            margin-top: 25px;
+        }
+        .rank .right .bottom .x .x2 .x21 .x217 .time1 a{
+            float: left;
+            display: block;
+            text-decoration: none;
+            height:20px;
+            width:20px;
+        }
+        .rank .right .bottom .x .x2 .x21 .x217 .time1 .img1{
+            background: url(../assets/img1.png)no-repeat;
+        }.rank .right .bottom .x .x2 .x21 .x217 .time1 .img1:hover{
+            background: url(../assets/img1s.png)no-repeat;
+        }
+        .rank .right .bottom .x .x2 .x21 .x217 .time1 .img2{
+            background: url(../assets/img2.png)no-repeat;
+        }.rank .right .bottom .x .x2 .x21 .x217 .time1 .img2:hover{
+            background: url(../assets/img2s.png)no-repeat;
+        }
+        .rank .right .bottom .x .x2 .x21 .x217 .time1 .img3{
+            background: url(../assets/img3.png)no-repeat;
+        }.rank .right .bottom .x .x2 .x21 .x217 .time1 .img3:hover{
+            background: url(../assets/img3s.png)no-repeat;
+        }
+        .rank .right .bottom .x .x2 .x21 .x217 .time1 .img4{
+            background: url(../assets/img4.png)no-repeat;
+        }.rank .right .bottom .x .x2 .x21 .x217 .time1 .img4:hover{
+            background: url(../assets/img4s.png)no-repeat;
+        }.rank .right .bottom .x .x3 .x31 .x317 .time1{
+            height: 20px;
+            width: 80px;
+            margin-top:5px;
+        }
+        .rank .right .bottom .x .x3 .x31 .x317 .time1 a{
+            float: left;
+            display: block;
+            text-decoration: none;
+            height:20px;
+            width:20px;
+        }
+        .rank .right .bottom .x .x3 .x31 .x317 .time1 .img1{
+            background: url(../assets/img1.png)no-repeat;
+        }.rank .right .bottom .x .x3 .x31 .x317 .time1 .img1:hover{
+            background: url(../assets/img1s.png)no-repeat;
+        }
+        .rank .right .bottom .x .x3 .x31 .x317 .time1 .img2{
+            background: url(../assets/img2.png)no-repeat;
+        }.rank .right .bottom .x .x3 .x31 .x317 .time1 .img2:hover{
+            background: url(../assets/img2s.png)no-repeat;
+        }
+        .rank .right .bottom .x .x3 .x31 .x317 .time1 .img3{
+            background: url(../assets/img3.png)no-repeat;
+        }.rank .right .bottom .x .x3 .x31 .x317 .time1 .img3:hover{
+            background: url(../assets/img3s.png)no-repeat;
+        }
+        .rank .right .bottom .x .x3 .x31 .x317 .time1 .img4{
+            background: url(../assets/img4.png)no-repeat;
+        }.rank .right .bottom .x .x3 .x31 .x317 .time1 .img4:hover{
+            background: url(../assets/img4s.png)no-repeat;
+        }
+        .rank .right .bottom .x .x3{
+            width: 660px;
+            height: 1210px;
+        }
+        .rank .right .bottom .x .x3 .hui1{
+            width: 660px;
+            height:30px;
+            background: #f7f7f7;
+
+        }
+        .rank .right .bottom .x .x3 .x31{
+            width: 660px;
+            height: 30px;
+            float: left;
+        }
+        .rank .right .bottom .x .x3 .x31 img{
+            width: 30px;  
+            height: 30px;
+            margin-top: 2px;
+            margin-left:-6px;
+
+        }
+        .rank .right .bottom .x .x3 .x31 div{
+            line-height: 30px;
+            text-align: center;
+            height: 30px;
+            float: left;
+            font-size: 12px;
+            background: no-repeat;
+        }
+        .rank .right .bottom .x .x3 .x31 .x311{
+            width: 48px;
+        }
+        .rank .right .bottom .x .x3 .x31 .x312{
+            width:30px;
+            
+        }
+        .rank .right .bottom .x .x3 .x31 .x313{
+            width: 50px;
+        }
+        .rank .right .bottom .x .x3 .x31 .x314{
+          
+            width: 28px;
+            background: url(../assets/n3.png) no-repeat 10px 4px ;
+        }
+        .rank .right .bottom .x .x3 .x31 .x314:hover{
+            width: 28px;
+            background: url(../assets/n31.png) no-repeat 10px 4px ;
+        }
+        .rank .right .bottom .x .x3 .x31 .x315{
+            text-align: left;
+            margin-left:10px;
+          
+        }
+        .rank .right .bottom .x .x3 .x31 .x316{
+            width: 50px;
+            background: url(../assets/n4.png)no-repeat 2px 8px;
+        }
+        .rank .right .bottom .x .x3 .x31 .x317{
+            width: 90px;
+            text-align: left;
+            float: right;
+        }
+        .rank .right .bottom .x .x3 .x31 .x318{
+            width: 83px;
+            text-align:left;
+            float: right;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+
         }
     </style>
     

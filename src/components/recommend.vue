@@ -1,6 +1,5 @@
 <template>
         <div class='reall'>
-            <button class="fanhui" @click="top()" v-show='show3'></button>
             <div class="reshow">
                 <div class="slideshow">
                     <transition-group tag="ul" :name="name">
@@ -247,9 +246,6 @@
     </template>
     <script>
         export default {
-            mounted () {
-              window.addEventListener('scroll', this.handleScroll)
-            },
             watch:{
                 mark1:function () {
                      if(this.mark1<0){
@@ -258,18 +254,9 @@
                     this.mark1=0
                 }    
                 },
-                long:function(){
-                    if(this.long>0){ 
-                        this.show3=true
-                    }else{
-                        this.show3=false
-                    }
-                }
             },
             data () {
                 return {
-                    long:0,
-                    show3:false,
                     name:'left',
                     mark:0,
                     mark1:0,
@@ -626,18 +613,12 @@
                 }
             },
             methods: {
-                handleScroll(){
-                    var scrollTop = window.pageYOffset
-                    this.long=scrollTop
-                },
+
                 autoPlay () {
                 this.mark++;
                 if (this.mark === 8) { //当遍历到最后一张图片置零
                     this.mark = 0
                 }
-                },
-                top(){
-                    window.scroll(0,0)
                 },
                 play () {
                 setInterval(this.autoPlay, 4000)
@@ -672,27 +653,11 @@
             }
         }
     </script>
-    <style scoped>
+    <style>
         * {
             margin: 0;
             padding: 0;
             list-style: none;
-        }
- 
-        .reall .fanhui{
-            position: fixed;
-            width: 45px;
-            height:45px;
-            right:125px;
-            top:450px;
-            display: block;
-            background:url(../assets/buttom.png);
-            border:1px solid rgb(170, 169, 169);
-            outline:none ;
-            border-radius: 3px;
-        }
-        .reall .fanhui:hover{
-            background:url(../assets/buttom1.png);
         }
         .reall .reshow {
             width:100%;
