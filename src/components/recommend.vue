@@ -621,7 +621,7 @@
                 }
                 },
                 play () {
-                setInterval(this.autoPlay, 4000)
+                setInterval(this.autoPlay, 3000)
                 },
                 change1(index){
                     if(this.mark<index){

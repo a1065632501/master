@@ -4,7 +4,7 @@
             <a href="" class="a1">推荐</a>
             <a href="" class="a2">排行榜</a>
             <a href="" class="a3">歌单</a>
-            <a href="" class="a4">主播电台</a>
+            <a href="" class="a4">2048</a>
             <a href="" class="a5">歌手</a>
             <a href="" class="a6">新碟上架</a>
         </div>

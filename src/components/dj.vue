@@ -20,35 +20,24 @@
                     nums : [] 
                 }
             },
-            // mounted () {
-            //     this.$set(this.nums,"1", 24)
-            //         },
-           
-        
             methods:{
                
                 randomAdd(){
                 let arr = this.shuffle(this.blankIndex());
-                //延时100毫秒添加
                 setTimeout(_=>{
                    this.$set(this.nums,arr.pop(),Math.random()>0.7 ? 4 : 2); 
-                    // console.log(this.$set(this.nums,arr.pop(),Math.random()>0.9 ? 4 : 2))
-                   
                 },100);
                 },
-                /*获取当前空白框索引组成的数组*/
                 blankIndex(){
                     let arr = [];
                     
                     this.nums.forEach((i,j)=>{
                         i==='' && arr.push(j);
-                    });
+                    });                  
                     return arr;
                 },
-                /*打乱数组*/
                 shuffle(arr){
-                    let l = arr.length,j;
-               
+                    let l = arr.length,j;              
                     while(l--){
                         j = parseInt(Math.random()*l);
                         [arr[l],arr[j]] = [arr[j],arr[l]]
@@ -59,9 +48,8 @@
                 this.show=false;
                 this.nums = Array(16).fill('');
                 let q =0;
-                while(q++<16){ //随机添加4个
-                   this.randomAdd(); 
-                 
+                while(q++<8){
+                   this.randomAdd();              
                 }
             },
             T(arr,n){
@@ -74,33 +62,18 @@
                 if(n>1)tmp=this.T(tmp,n-1);
                 return tmp;
             },
-            /*
-            *方向键 事件处理
-            *把上、右、下方向通过旋转 变成左向操作
-            */
             keyDown(e){
-                //左上右下 分别转置0 3 2 1 次
-                // const map = {37:0,38:3,39:2,40:1};
-                // if(!(e.keyCode in map))return;
-                // this.handle(map[e.keyCode]);
-                // console.log(1)
             },
             handle(i){
                 this.move(i);
-               
             },
-            /*移动滑块 i:转置次数 */
             move(i){
-                let tmp = this.T(this.nums,i),//把任意方向键转置，当成向左移动
-                    hasMove = false, //一次操作有移动方块时才添加方块
-                    /*
-                    *记录已经合并过一次的位置 避免重复合并
-                    *如 2 2 4 4 在一次合并后应为 4 8 0 0  而非8 4 0 0 
-                    */
+                let tmp = this.T(this.nums,i),
+                    hasMove = false, 
                     hasCombin = {};
                 tmp.forEach((j,k)=>{
                     while(k%4 && j!==''){
-                        if(tmp[k-1] === ''){ //当前位置的前一位置为空,交换俩位置
+                        if(tmp[k-1] === ''){ 
                             tmp[k-1] = j;
                             tmp[k] = '';
                             hasMove = true;
@@ -109,21 +82,22 @@
                                 hasCombin[k] = false;
                             }
                         }else if(tmp[k-1] === j && !hasCombin[k] && !hasCombin[k-1]){
-                            //当前位置与前一位置数字相同，合并到前一位置，然后清空当前位置
                             j *= 2;
                             tmp[k-1] = j;
                             tmp[k] = '';
                             hasMove = true;
-                            hasCombin[k-1] = true;  //记录合并位置
+                            hasCombin[k-1] = true;
                         }else{
                             break;
                         }
                         k--;
                     } 
                 });
-                this.nums = this.T(tmp,4-i);//转置回去，把数据还给this.nums
-                hasMove && this.randomAdd();//有数字挪动才添加新数字
+                this.nums = this.T(tmp,4-i);
+                hasMove && this.randomAdd();
                 this.isPass();
+                console.log(this.nums)
+                console.log(i)
             },
             isPass(){
             let isOver=true,hasPass=false,tmp = this.T(this.nums,1);
@@ -153,9 +127,6 @@
             }
             };
         }
-             
-            
-        
             },
             created:function () {
                     let _this = this;
@@ -168,8 +139,6 @@
                 },
     
             }
-           
-    
         </script>
         <style>
             * {
@@ -201,6 +170,15 @@
             margin-left: 290px;
             float: left;
         }
+        #app1 a:hover{
+            animation: colors 0.5s forwards ;
+        }
+        @keyframes colors
+            {
+            from { background: rgb(124, 227, 235);}
+            to {background: yellow;}
+            }
+                    
         #app1 .right{
             margin-left:50px;
         }
@@ -222,9 +200,7 @@
             height: 100px;
             text-align: center;
             line-height: 100px;
-            border:1px solid red;
-    
+            border:1px solid red;  
         }
-    
         </style>
         

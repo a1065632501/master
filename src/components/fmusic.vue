@@ -4,8 +4,8 @@
                 <router-link :to='{path:"/fmusic/recommend"}' class="a1">推荐</router-link>
                 <router-link :to='{path:"/fmusic/ranking"}' class="a2">排行榜</router-link>
                 <router-link :to='{path:"/fmusic/list"}' class="a3">歌单</router-link>
-                <router-link :to='{path:"/fmusic/dj"}' class="a4">主播电台</router-link>
-                <router-link :to='{path:"/fmusic/singer"}' class="a5">歌手</router-link>
+                <router-link :to='{path:"/fmusic/dj"}' class="a4">2048</router-link>
+                <router-link :to='{path:"/fmusic/singer"}' class="a5">贪吃蛇</router-link>
                 <router-link :to='{path:"/fmusic/news"}' class="a6">新碟上架</router-link>
             </div>
             <button class="fanhui" @click="top()" v-show='show3'></button>
