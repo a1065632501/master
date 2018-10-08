@@ -5,7 +5,7 @@
         </table>
         <div class="show" v-show='show'>贪吃蛇~</div>
         <a href="#" @click="start()">开始</a>
-</div>
+    </div>
 
 </template>
     <script>

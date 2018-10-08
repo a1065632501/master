@@ -5,13 +5,21 @@ import App from './App.vue'
 import router from './router'
 import Top from './srcc/Top.vue'
 import Bottom from './srcc/Bottom.vue'
-Vue.config.productionTip = false
+import news from './components/news.vue'
+import dj from './components/dj.vue'
+import text from './components/text.vue'
+import ElementUI from 'element-ui';
+import 'element-ui/lib/theme-chalk/index.css';
 
+Vue.config.productionTip = false
+Vue.use(ElementUI);
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
   router,
-  components: { App },
+  components: { 
+    App,
+   },
   template: '<App/>'
 })
 new Vue({
