@@ -6,7 +6,7 @@
                 <router-link :to='{path:"/fmusic/list"}' class="a3">歌单</router-link>
                 <router-link :to='{path:"/fmusic/dj"}' class="a4">2048</router-link>
                 <router-link :to='{path:"/fmusic/singer"}' class="a5">贪吃蛇</router-link>
-                <router-link :to='{path:"/fmusic/news"}' class="a6">新碟上架</router-link>
+                <router-link :to='{path:"/fmusic/news"}' class="a6">组件引用</router-link>
             </div>
             <button class="fanhui" @click="top()" v-show='show3'></button>
             <router-view></router-view>

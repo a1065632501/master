@@ -3,7 +3,7 @@
         <div class='logo'></div>
         <div class='chose'>
             <router-link :to='{path:"/fmusic"}' class="a">发现音乐</router-link>
-            <router-link :to='{path:"/mymusic"}' class="b">我的音乐</router-link>
+            <router-link :to='{path:"/mymusic"}' class="b">数组算法</router-link>
             <router-link :to='{path:"/friend"}' class="c">朋友</router-link>
             <router-link :to='{path:"/shop"}' class="d">商城</router-link>
             <router-link :to='{path:"/people"}' class="e">音乐人</router-link>
